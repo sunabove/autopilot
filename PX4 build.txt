@@ -45,7 +45,7 @@ make px4_fmu-v3 upload
 
 # 펌웨어(연습 문제 추가번전)다운로드
 cd ~
-mv Firmware Firware_org
+mv Firmware Firmware_org
 git clone https://github.com/sunabove/Firmware.git
 cd Firmware
 # 펌웨어 빌드
