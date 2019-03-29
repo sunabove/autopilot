@@ -30,7 +30,7 @@ sudo reboot
 
 # Building PX4 Software
 cd ~
-# 펌웨어 소스 다운로드
+# 원본 펌웨어 소스 다운로드
 git clone https://github.com/PX4/Firmware.git
 cd Firmware
 sudo pip install --upgrade setuptools
@@ -42,3 +42,15 @@ make posix jmavsim
 make px4_fmu-v3
 # 펌웨어 업로드
 make px4_fmu-v3 upload
+
+# 펌웨어 연습 문제 소스 다운로드
+cd ~
+mv Firmware Firware_org
+git clone https://github.com/sunabove/Firmware.git
+cd Firmware
+# 펌웨어 빌드
+make px4_fmu-v3
+# 펌웨어 업로드
+make px4_fmu-v3 upload
+
+
