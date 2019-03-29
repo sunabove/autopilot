@@ -26,7 +26,7 @@ wget https://raw.githubusercontent.com/PX4/Devguide/master/build_scripts/ubuntu_
 chmod a+x ubuntu_sim_nuttx.sh
 ./ubuntu_sim_nuttx.sh
 # 재부팅
-sudo reboot
+reboot
 
 # Building PX4 Software
 cd ~
