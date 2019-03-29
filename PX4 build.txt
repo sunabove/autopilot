@@ -1,0 +1,32 @@
+
+# 리눅스 업데이트 및 업그레이드
+sudo apt update
+sudo apt upgrade
+
+# To install the development toolchain:
+# dialout: Full and direct access to serial ports. 
+# Members of this group can reconfigure the modem, dial anywhere, etc. dip: 
+sudo usermod -a -G dialout $USER
+
+sudo add-apt-repository ppa:team-gcc-arm-embedded/ppa
+sudo apt update
+sudo apt-get install gcc-arm-embedded
+
+wget https://raw.githubusercontent.com/PX4/Devguide/master/build_scripts/ubuntu_sim_nuttx.sh
+chmod a+x ubuntu_sim_nuttx.sh
+./ubuntu_sim_nuttx.sh 
+# 재부팅
+sudo reboot
+
+# Building PX4 Software
+cd ~
+# 펌웨어 소스 다운로드 
+git clone https://github.com/PX4/Firmware.git 
+cd Firmware
+sudo pip install --upgrade setuptools 
+sudo apt install python-jinja2
+sudo pip install pyyaml
+# 자바 시뮬레이터 빌드 
+make posix jmavsim
+# 펌웨어 빌드
+make px4_fmu-v3
