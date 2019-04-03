@@ -53,4 +53,8 @@ make px4_fmu-v3
 # 펌웨어 업로드
 make px4_fmu-v3 upload
 
+# 펌에어 소스 업데이트 방법
+cd ~/Firmware 
+git pull
+
 
