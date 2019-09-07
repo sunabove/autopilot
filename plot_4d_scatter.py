@@ -1,4 +1,5 @@
 # plot 4d scatter
+# pip install numpy scipy mayavi PyQt5
 
 import numpy as np
 from scipy import stats
@@ -11,7 +12,12 @@ z = 10*np.random.normal(mu, sigma, 5000)
 
 xyz = np.vstack([x,y,z])
 kde = stats.gaussian_kde(xyz)
-density = kde(xyz)
+density = kde(xyz) 
+
+x = [ 0, 1, 2, 3 ]
+x = [ 0, 1, 2, 3 ]
+x = [ 0, 1, 2, 3 ]
+density = [ 0.2, 0.5, 0.7 ] 
 
 # Plot scatter with mayavi
 figure = mlab.figure('DensityPlot')
