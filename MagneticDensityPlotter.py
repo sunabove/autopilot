@@ -16,8 +16,6 @@ y = df[ 'y' ].tolist()
 z = df[ 'z' ].tolist()
 v = df[ 'value' ].tolist()
 
-print(df)
-
 ''' 
 x = [ 1, 1, 1, 1 ]
 y = [ 1, 2, 2, 3 ]
@@ -26,7 +24,7 @@ v = [ .3, .4, .5, .2 ]
 '''
 
 # Plot scatter with mayavi
-figure = mlab.figure('DensityPlot')
+figure = mlab.figure( 'Magnetic Field Density' )
 sf = 0.07
 sf = 1
 pts = mlab.points3d(x, y, z, v, scale_mode='none', scale_factor=sf)
