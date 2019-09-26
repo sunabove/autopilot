@@ -5,17 +5,31 @@ import numpy as np
 from scipy import stats
 from mayavi import mlab
 
-mu, sigma = 0, 0.1 
-x = 10*np.random.normal(mu, sigma, 5000)
-y = 10*np.random.normal(mu, sigma, 5000)
-z = 10*np.random.normal(mu, sigma, 5000)
+import pandas as pd
 
-xyz = np.vstack([x,y,z])
-kde = stats.gaussian_kde(xyz)
-density = kde(xyz) 
+df = pd.read_excel ( r'data.xlsx')
+#(use "r" before the path string to address special character, such as '\').
+# Don't forget to put the file name at the end of the path + '.xlsx'
+
+x = df[ 'x' ].tolist()
+y = df[ 'y' ].tolist()
+z = df[ 'z' ].tolist()
+v = df[ 'value' ].tolist()
+
+print(df)
+
+''' 
+x = [ 1, 1, 1, 1 ]
+y = [ 1, 2, 2, 3 ]
+z = [ 1, 2, 1, 3 ]
+v = [ .3, .4, .5, .2 ]
+'''
 
 # Plot scatter with mayavi
 figure = mlab.figure('DensityPlot')
-pts = mlab.points3d(x, y, z, density, scale_mode='none', scale_factor=0.07)
+sf = 0.07
+sf = 1
+pts = mlab.points3d(x, y, z, v, scale_mode='none', scale_factor=sf)
+
 mlab.axes()
 mlab.show()
